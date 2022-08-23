@@ -1,22 +1,22 @@
-import 'package:flutter/material.dart';
+import 'dart:html';
 
-import 'components/onbording/onbording.dart';
+import 'package:flutter/material.dart';
+import 'components/onbording/on_bording_list.dart';
+import 'components/onbording/page_view.dart';
 
 void main() {
-  runApp(const HomeScreen());
+  runApp(const EcommerceApp());
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class EcommerceApp extends StatelessWidget {
+  const EcommerceApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: OnBoarding(
-          'assets/images/pay.png',
-          'We can change this text',
-          'We can change this text',
-          '''We can change this textWe can change this textWe can change this textWe can change this textWe can change this textWe can change this textWe can change this textWe can change this textWe can change this textWe can change this text.'''),
+      home: PageViewsBoarding(
+        children: children,
+      ),
     );
   }
 }
