@@ -1,8 +1,5 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'components/onbording/on_bording_list.dart';
-import 'components/onbording/page_view.dart';
+import 'page/page_view.dart';
 
 void main() {
   runApp(const EcommerceApp());
@@ -13,10 +10,6 @@ class EcommerceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: PageViewsBoarding(
-        children: children,
-      ),
-    );
+    return MaterialApp(home: PageViewsBoarding());
   }
 }
