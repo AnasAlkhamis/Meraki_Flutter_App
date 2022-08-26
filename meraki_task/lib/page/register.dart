@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'register.dart';
+
 import '../widget/text_field.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class Login extends StatelessWidget {
             children: [
               SafeArea(
                 child: Image.asset(
-                  "assets/images/login.png",
+                  "assets/images/register.png",
                   height: 300,
                 ),
               ),
@@ -39,22 +39,15 @@ class Login extends StatelessWidget {
                   primary: Color(0xFF98CF98),
                 ),
                 onPressed: () {},
-                child: Text("Login", style: TextStyle(fontSize: 16.00)),
+                child: Text("Register", style: TextStyle(fontSize: 16.00)),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               TextButton(
                 onPressed: () {
-                  // Navigate to second route when press.
-
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Register(),
-                      ));
+                  // Navigate to reversed route when press.
+                  Navigator.pop(context);
                 },
-                child: const Text("Create new account",
+                child: const Text("login",
                     style:
                         TextStyle(fontSize: 16.00, color: Color(0xFF98CF98))),
               ),
