@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../widget/dot.dart';
 import '../widget/on_bording.dart';
 import '../models/on_bording.dart';
+import 'login.dart';
 
 class PageViewsBoarding extends StatefulWidget {
   @override
@@ -57,6 +58,11 @@ class _PageViewsBoardingState extends State<PageViewsBoarding> {
                       pageController.animateToPage(activePage + 1,
                           duration: const Duration(milliseconds: 400),
                           curve: Curves.easeIn);
+                    } else {
+                      // Navigate to second route when press.
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: ((context) => Login())),
+                          (route) => false);
                     }
                   },
                   child: Text(activePage == data.length - 1 ? "Start" : "Next",
@@ -64,7 +70,12 @@ class _PageViewsBoardingState extends State<PageViewsBoarding> {
                 ),
                 Spacer(),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigate to second route when press.
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: ((context) => Login())),
+                        (route) => false);
+                  },
                   child: const Text("Skip",
                       style:
                           TextStyle(fontSize: 16.00, color: Color(0xFF98CF98))),
