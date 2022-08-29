@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
 import '../widget/text_field.dart';
+import '../models/user.dart';
 
 class Login extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
+  UserData userData = UserData();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,8 +67,13 @@ class Login extends StatelessWidget {
                   primary: Color(0xFF98CF98),
                 ),
                 onPressed: () {
-                  print(passwordController.text);
-                  print(emailController.text);
+                  // user.addUser(
+                  //     email: emailController, pass: passwordController);
+                  String sss = userData.findUser(
+                      emailController.text, passwordController.text);
+                      print(sss);
+                  List ss = userData.getData();
+                  print(ss);
                 },
                 child: Text("Login", style: TextStyle(fontSize: 16.00)),
               ),
