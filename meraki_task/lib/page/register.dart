@@ -22,15 +22,15 @@ class Register extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              CustomTextField(
-                hint: 'Enter your email ',
-                label: 'Email',
-              ),
-              const SizedBox(height: 30),
-              CustomTextField(
-                hint: 'Enter your password',
-                label: 'Password',
-              ),
+              // CustomTextField(
+              //   hint: 'Enter your email ',
+              //   label: 'Email',
+              // ),
+              // const SizedBox(height: 30),
+              // CustomTextField(
+              //   hint: 'Enter your password',
+              //   label: 'Password',
+              // ),
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(

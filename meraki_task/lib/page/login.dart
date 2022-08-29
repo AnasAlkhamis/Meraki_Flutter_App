@@ -3,7 +3,8 @@ import 'register.dart';
 import '../widget/text_field.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,40 @@ class Login extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               CustomTextField(
+                controller: emailController,
                 hint: 'Enter your email ',
                 label: 'Email',
               ),
               const SizedBox(height: 30),
-              CustomTextField(
-                hint: 'Enter your password',
-                label: 'Password',
+              TextField(
+                controller: passwordController,
+                autofocus: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                      borderSide:
+                          const BorderSide(color: Color(0xFF98CF98), width: 1)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                      borderSide:
+                          const BorderSide(color: Color(0xFF98CF98), width: 2)),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide:
+                        const BorderSide(color: Color(0xFF98CF98), width: 2),
+                  ),
+                  labelText: 'Password',
+                  labelStyle:
+                      const TextStyle(color: Color(0xFF98CF98), fontSize: 16),
+                  hintText: 'Enter your password',
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                ),
               ),
+              // CustomTextField(
+              //   hint: 'Enter your password',
+              //   label: 'Password',
+              // ),
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -38,7 +65,10 @@ class Login extends StatelessWidget {
                   shape: StadiumBorder(),
                   primary: Color(0xFF98CF98),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print(passwordController.text);
+                  print(emailController.text);
+                },
                 child: Text("Login", style: TextStyle(fontSize: 16.00)),
               ),
               const SizedBox(
