@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../models/user.dart';
 import '../widget/text_field.dart';
 
 class Register extends StatelessWidget {
-  const Register({super.key});
-
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,15 +23,17 @@ class Register extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // CustomTextField(
-              //   hint: 'Enter your email ',
-              //   label: 'Email',
-              // ),
-              // const SizedBox(height: 30),
-              // CustomTextField(
-              //   hint: 'Enter your password',
-              //   label: 'Password',
-              // ),
+              CustomTextField(
+                hint: 'Enter your email ',
+                label: 'Email',
+                controller: emailController,
+              ),
+              const SizedBox(height: 30),
+              CustomTextField(
+                hint: 'Enter your password',
+                label: 'Password',
+                controller: passwordController,
+              ),
               const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -38,7 +41,11 @@ class Register extends StatelessWidget {
                   shape: StadiumBorder(),
                   primary: Color(0xFF98CF98),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  User userData =
+                      User(emailController.text, passwordController.text);
+                  userData.addUser();
+                },
                 child: Text("Register", style: TextStyle(fontSize: 16.00)),
               ),
               const SizedBox(height: 20),

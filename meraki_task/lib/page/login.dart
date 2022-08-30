@@ -6,7 +6,7 @@ import '../models/user.dart';
 class Login extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  UserData userData = UserData();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,13 +67,11 @@ class Login extends StatelessWidget {
                   primary: Color(0xFF98CF98),
                 ),
                 onPressed: () {
-                  // user.addUser(
-                  //     email: emailController, pass: passwordController);
-                  String sss = userData.findUser(
-                      emailController.text, passwordController.text);
-                      print(sss);
-                  List ss = userData.getData();
-                  print(ss);
+                  User userData =
+                      User(emailController.text, passwordController.text);
+                  userData.findUser();
+                  print("userData.findUser()");
+                  print(userData.findUser());
                 },
                 child: Text("Login", style: TextStyle(fontSize: 16.00)),
               ),

@@ -1,32 +1,41 @@
+List<User> _users = [];
+
 class User {
   final String email;
   final String password;
 
-  User({
-    required this.email,
-    required this.password,
-  });
-}
+  User(
+    this.email,
+    this.password,
+  );
 
-class UserData {
-  List users = [];
-
-  void addUser(email, pass) {
-    print({email, pass});
-
-    users.add(User(password: pass, email: email));
+  void addUser() {
+    _users.add(this);
   }
 
-  String findUser(String email, String pass) {
-    for (var element in users) {
-      if (element.password == pass && element.email == email) {
+  String findUser() {
+    for (var element in _users) {
+      if (element.password == this.password && element.email == this.email) {
         return "login success";
       }
     }
     return "login faild";
   }
-
-  List getData() {
-    return users;
-  }
 }
+
+
+// class UserData {
+  // List<User> users = [];
+
+// //  instance variables
+
+//   void addUser(email, pass) {
+//     users.add(User(password: pass, email: email));
+//   }
+
+
+
+//   List getData() {
+//     return users;
+//   }
+// }
