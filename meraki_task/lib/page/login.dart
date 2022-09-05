@@ -70,8 +70,6 @@ class Login extends StatelessWidget {
                   User userData =
                       User(emailController.text, passwordController.text);
                   userData.findUser();
-                  print("userData.findUser()");
-                  print(userData.findUser());
                 },
                 child: Text("Login", style: TextStyle(fontSize: 16.00)),
               ),

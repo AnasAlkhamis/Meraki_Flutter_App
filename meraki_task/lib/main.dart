@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meraki_task/page/qr_code.dart';
 import 'page/page_view.dart';
 
 void main() {
@@ -10,6 +11,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: PageViewsBoarding());
+    return MaterialApp(home: QrCode());
   }
 }
